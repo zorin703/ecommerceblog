@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../store/reduxHooks";
 import {blogTitleAction} from "../store/actions/blogTitleAction";
 import {API_BASE_URL, TITLE_BLOG_URL} from "../api/apiConst";
+import PostBigText from "../components/postBigText/PostBigText";
 
 const Blog = () => {
 
@@ -17,6 +18,7 @@ const Blog = () => {
     // @ts-ignore
     return (
         <div>
+            <PostBigText/>
             {isLoading && <h1>Loading.......</h1>}
             <button>ADD BLOGS</button>
             {blogTitles.map((title)=><div>
