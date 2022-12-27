@@ -21,12 +21,14 @@ const Blog = () => {
             <PostBigText/>
             {isLoading && <h1>Loading.......</h1>}
             <button>ADD BLOGS</button>
+            <div>
             {blogTitles.map((title)=><div>
                 <h4>{title.id}</h4>
                 <h1>{title.blogTitleText}</h1>
                 <h4>{title.dateBlog}</h4>
                 </div>
             )}
+            </div>
             Hello ITS BLOG
         </div>
     );
