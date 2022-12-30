@@ -3,3 +3,4 @@ export interface blogTitleResponse {
     blogTitleText: string | null,
     dateBlog: string | null,
 }
+

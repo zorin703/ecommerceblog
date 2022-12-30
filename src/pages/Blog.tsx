@@ -4,6 +4,7 @@ import {blogTitleAction} from "../store/actions/blogTitleAction";
 import blogStyle from "./Blog.module.css"
 import {blogTitleResponse} from "../models/blogTitleResponse";
 import PostBigText from "../components/postBigText/PostBigText";
+import PostsBlog from "../components/postsBlog/PostsBlog";
 
 const Blog = () => {
 
@@ -16,6 +17,7 @@ const Blog = () => {
 
     return (
         <div>
+            <img src='https://github.com/zorin703/ecommerceblog/blob/fb006aa91b8ff768df5040b27bb07bd325d191f3/src/server/images/Post-Image1.jpg'/>
             {isLoading && <h1>Loading.......</h1>}
             {error && <h4>{error}</h4>}
             <PostBigText/>
@@ -28,6 +30,8 @@ const Blog = () => {
                     </div>
                 )}
             </div>
+
+            <PostsBlog/>
 
 
         </div>

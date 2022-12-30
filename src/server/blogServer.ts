@@ -1,5 +1,7 @@
 import {createServer} from "miragejs"
 import {
+    BLOG_TEXT_1, BLOG_TEXT_2, BLOG_TEXT_3,
+    BLOG_TEXT_4, BLOG_TEXT_5, BLOG_TEXT_6,
     DATE_BLOG,
     TITLE_BLOG_TEXT_0,
     TITLE_BLOG_TEXT_1,
@@ -7,7 +9,7 @@ import {
     TITLE_BLOG_TEXT_3,
     TITLE_BLOG_TEXT_4
 } from "./const";
-import {BIG_TITLE_BLOG_URL, TITLE_BLOG_URL} from "../api/apiConst";
+import {BIG_TITLE_BLOG_URL, BLOG_URL, TITLE_BLOG_URL} from "../api/apiConst";
 
 createServer({
     routes() {
@@ -28,5 +30,47 @@ createServer({
                 ],
             }
         })
-    },
+        this.get(BLOG_URL, () => {
+            return {
+                blogs: [
+                    {
+                        id: 1,
+                        blogImage: 'src/server/images/Post-Image1.jpg',
+                        blogText: BLOG_TEXT_1,
+                        dateBlog: DATE_BLOG
+                    },
+                    {
+                        id: 2,
+                        blogImage: 'src/server/images/Post-Image2.jpg',
+                        blogText: BLOG_TEXT_2,
+                        dateBlog: DATE_BLOG
+                    },
+                    {
+                        id: 3,
+                        blogImage: 'src/server/images/Post-Image3.jpg',
+                        blogText: BLOG_TEXT_3,
+                        dateBlog: DATE_BLOG
+                    },
+                    {
+                        id: 3,
+                        blogImage: '',
+                        blogText: BLOG_TEXT_4,
+                        dateBlog: DATE_BLOG
+                    },
+                    {
+                        id: 5,
+                        blogImage: 'src/server/images/Post-Rectangle 4.jpg',
+                        blogText: BLOG_TEXT_5,
+                        dateBlog: DATE_BLOG
+                    },
+                    {
+                        id: 6,
+                        blogImage: 'src/server/images/Post-Rectangle 4.jpg',
+                        blogText: BLOG_TEXT_6,
+                        dateBlog: DATE_BLOG
+                    },
+                ],
+            }
+        })
+    }
 })

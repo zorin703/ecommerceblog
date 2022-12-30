@@ -1,9 +1,11 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import blogTitleSlice from "./reducers/blogTitleSlice";
 import blogBigTitleSlice from "./reducers/blogBigTitleSlice";
+import blogSlice from "./reducers/blogSlice";
 
 
 const rootReducer = combineReducers({
+    blog: blogSlice,
     blogTitle: blogTitleSlice,
     blogBigTitle: blogBigTitleSlice,
    })
