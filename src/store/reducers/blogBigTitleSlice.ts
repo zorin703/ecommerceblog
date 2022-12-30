@@ -1,37 +1,38 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {blogTitleAction} from "../actions/blogTitleAction";
+import {blogBigTitleAction} from "../actions/blogBigTitleAction";
 import {blogTitleResponse} from "../../models/blogTitleResponse";
 
+
 type blogsState = {
-    blogTitles: blogTitleResponse[] | null;
+    blogBigTitles: blogTitleResponse[] | null;
     isLoading: boolean;
     error: string | null;
 }
 
 
 const initialState: blogsState = {
-    blogTitles: [],
+    blogBigTitles: null,
     isLoading: true,
     error: null,
 };
 
-const blogTitleSlice = createSlice({
-    name: 'blogTitles',
+const blogBigTitleSlice = createSlice({
+    name: 'blogBigTitles',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-             builder
-            .addCase(blogTitleAction.pending, (state) => {
+        builder
+            .addCase(blogBigTitleAction.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(blogTitleAction.fulfilled, (state, action: PayloadAction<any>) => {
-                state.blogTitles = action.payload;
+            .addCase(blogBigTitleAction.fulfilled, (state, action: PayloadAction<any>) => {
+                state.blogBigTitles = action.payload;
                 state.isLoading = false;
             })
-            .addCase(blogTitleAction.rejected, (state, action: PayloadAction<any>) => {
+            .addCase(blogBigTitleAction.rejected, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
     }
 });
-export default blogTitleSlice.reducer;
+export default blogBigTitleSlice.reducer;

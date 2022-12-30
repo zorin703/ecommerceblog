@@ -7,13 +7,14 @@ import {blogTitleResponse} from "../models/blogTitleResponse";
 // })
 
 export const blogTitleAPI = {
-    blogTitle(): Promise<AxiosResponse<blogTitleResponse>> {
-        return axios.get<blogTitleResponse>(TITLE_BLOG_URL)
+    blogTitle(): Promise<AxiosResponse<blogTitleResponse>>{
+        return axios.get(TITLE_BLOG_URL)
+
     },
 
     blogBigTitle(): Promise<AxiosResponse<blogTitleResponse>> {
-        return axios.get<blogTitleResponse>(BIG_TITLE_BLOG_URL);
-    }
+        return axios.get<blogTitleResponse>(BIG_TITLE_BLOG_URL)
+    },
 }
 
 

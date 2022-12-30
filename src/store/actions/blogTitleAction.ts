@@ -1,15 +1,15 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {blogTitleResponse} from "../../models/blogTitleResponse";
 import {blogTitleAPI} from "../../api/api";
-import {AxiosResponse} from "axios";
+import {Axios, AxiosResponse} from "axios";
+import {blogTitleResponse} from "../../models/blogTitleResponse";
 
-export const blogTitleAction = createAsyncThunk<blogTitleResponse, null, { rejectValue: string }>(
+export const blogTitleAction = createAsyncThunk<AxiosResponse<blogTitleResponse>, undefined, { rejectValue: string }>(
     "blogTitles/blogTitleAction",
     async function (_, {rejectWithValue}) {
         try {
-            const response: AxiosResponse<blogTitleResponse> = await blogTitleAPI.blogTitle();
-            console.log(response);
-            const data = await response.data.;
+            const response: AxiosResponse = await blogTitleAPI.blogTitle();
+
+            const data = response.data.movies;
             return data;
         } catch (e) {
             return rejectWithValue('Server error');
