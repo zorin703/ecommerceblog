@@ -9,7 +9,8 @@ export const blogAction = createAsyncThunk<AxiosResponse<BlogResponse>, undefine
     async function (_, {rejectWithValue}) {
         try {
             const response: AxiosResponse = await blogTitleAPI.blog();
-            const data = response.data.blogs;
+            const data = response.data;
+            const paging = response.data.totalCount;
             return data;
         } catch (e) {
             return rejectWithValue('Server error');

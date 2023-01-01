@@ -1,32 +1,41 @@
 import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../store/reduxHooks";
-import blogStyle from "../../pages/Blog.module.css";
 import {blogAction} from "../../store/actions/blogAction";
 import {BlogResponse} from "../../models/blogResponse";
-import img from "../../server/images/Post-Image1.jpg"
+import postsStyle from "./postsBlog.module.css"
+import {BiTimeFive} from "react-icons/bi";
 
 
 const PostsBlog = () => {
-
     const {isLoading, error, blogPost} = useAppSelector(state => state.blog)
     const dispatch = useAppDispatch();
-
 
     useEffect(() => {
         dispatch((blogAction()))
     }, [dispatch])
 
-    // @ts-ignore
     return (
         <div>
-
+            {isLoading && <h1>Loading.......</h1>}
             {error && <h4>{error}</h4>}
-            <div className={blogStyle.blogGrid}>
-                {blogPost && blogPost.map((title: BlogResponse) => <div>
-                        <img src={title.blogImage}/>
-                        <h4>{title.blogText}</h4>
-                        <h4>{title.dateBlog}</h4>
-                    </div>
+            <div className={postsStyle.wrapperPostsBlog}>
+                {blogPost && blogPost.map((title: BlogResponse) =>
+                    title.blogImage ?
+                        <div>
+                            <img src={title.blogImage}/>
+                            <h4>{title.blogText}</h4>
+                            <div>
+                                <BiTimeFive/>
+                                <span>{title.dateBlog}</span>
+                            </div>
+                        </div> :
+                        <div>
+                            <h1>{title.blogText}</h1>
+                            <div>
+                                <BiTimeFive/>
+                                <span>{title.dateBlog}</span>
+                            </div>
+                        </div>
                 )}
             </div>
         </div>
