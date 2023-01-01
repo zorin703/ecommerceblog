@@ -35,19 +35,19 @@ createServer({
                 blogs: [
                     {
                         id: 1,
-                        blogImage: 'src/server/images/Post-Image1.jpg',
+                        blogImage: '/images/Post-Image1.png',
                         blogText: BLOG_TEXT_1,
                         dateBlog: DATE_BLOG
                     },
                     {
                         id: 2,
-                        blogImage: 'src/server/images/Post-Image2.jpg',
+                        blogImage: '/images/Post-Image2.png',
                         blogText: BLOG_TEXT_2,
                         dateBlog: DATE_BLOG
                     },
                     {
                         id: 3,
-                        blogImage: 'src/server/images/Post-Image3.jpg',
+                        blogImage: '/images/Post-Image3.png',
                         blogText: BLOG_TEXT_3,
                         dateBlog: DATE_BLOG
                     },
@@ -59,13 +59,13 @@ createServer({
                     },
                     {
                         id: 5,
-                        blogImage: 'src/server/images/Post-Rectangle 4.jpg',
+                        blogImage: '/images/Post-Image4.png',
                         blogText: BLOG_TEXT_5,
                         dateBlog: DATE_BLOG
                     },
                     {
                         id: 6,
-                        blogImage: 'src/server/images/Post-Rectangle 4.jpg',
+                        blogImage: '/images/Post-Image5.png',
                         blogText: BLOG_TEXT_6,
                         dateBlog: DATE_BLOG
                     },
